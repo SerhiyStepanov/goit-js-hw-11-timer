@@ -20,9 +20,9 @@ class CountdownTimer {
             const time = this.getTimeToTargetDate(timeToFinish)
             // updateCountdownTimer({days,hours,mins,secs})
             this.updateFace(time)
-            // console.log('current :', currentTime)
-            // console.log('finish :',timeToFinish) 
-            // console.log(`${days}:${hours}:${mins}:${secs}`)
+            console.log(' CurrentTime :', currentTime)
+            console.log(' TargetDate :',this.targetDate.getTime()) 
+            console.log(' TimeToFinish',timeToFinish)
         }, 1000)
     }
 
