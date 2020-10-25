@@ -20,8 +20,8 @@ class CountdownTimer {
             const time = this.getTimeToTargetDate(timeToFinish)
             // updateCountdownTimer({days,hours,mins,secs})
             this.updateFace(time)
-            console.log('current :', currentTime)
-            console.log('finish :',timeToFinish) 
+            // console.log('current :', currentTime)
+            // console.log('finish :',timeToFinish) 
             // console.log(`${days}:${hours}:${mins}:${secs}`)
         }, 1000)
     }
@@ -45,7 +45,7 @@ class CountdownTimer {
 
 const countdownTimer = new CountdownTimer({
     selector: '#timer-1',
-    targetDate: new Date('Oct 26, 2020'),
+    targetDate: new Date('Oct 27, 2020'),
     updateFace : updateCountdownTimer,
 });
  
