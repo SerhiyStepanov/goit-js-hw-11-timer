@@ -17,12 +17,12 @@ class CountdownTimer {
         setInterval(() => {
             const currentTime = Date.now()
             const timeToFinish = this.targetDate - currentTime
-            const { days, hours, mins, secs } = this.getTimeToTargetDate(timeToFinish)
+            const time = this.getTimeToTargetDate(timeToFinish)
             // updateCountdownTimer({days,hours,mins,secs})
-            // this.updateFace()
+            this.updateFace(time)
             console.log('current :', currentTime)
             console.log('finish :',timeToFinish) 
-            console.log(`${days}:${hours}:${mins}:${secs}`)
+            // console.log(`${days}:${hours}:${mins}:${secs}`)
         }, 1000)
     }
 
@@ -51,7 +51,7 @@ const countdownTimer = new CountdownTimer({
  
 countdownTimer.start()
 
-function updateCountdownTimer(time) {
+function updateCountdownTimer({days,hours,mins,secs}) {
     spanElDays.textContent = `${days}`
     spanElHours.textContent = `${hours}`
     spanElMins.textContent = `${mins}`
