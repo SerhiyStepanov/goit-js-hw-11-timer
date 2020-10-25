@@ -18,7 +18,6 @@ class CountdownTimer {
             const timeToFinish = this.targetDate - currentTime
             const { days, hours, mins, secs } = this.getTimeToTargetDate(timeToFinish)
             // updateCountdownTimer({days,hours,mins,secs})
-            // console.log('start',startTime)
             console.log('current :', currentTime)
             console.log('finish :',timeToFinish) 
             console.log(`${days}:${hours}:${mins}:${secs}`)
@@ -43,11 +42,10 @@ class CountdownTimer {
 
 const countdownTimer = new CountdownTimer({
   selector: '#timer-1',
-    targetDate: new Date('Oct 26, 2021'),
+    targetDate: new Date('Oct 26, 2020'),
 });
  
 countdownTimer.start()
-console.log(countdownTimer.targetDate)
 
 function updateCountdownTimer(time) {
     spanElDays.textContent = `${days}`
