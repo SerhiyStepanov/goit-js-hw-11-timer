@@ -5,15 +5,16 @@ const spanElSecs = document.querySelector('.value[data-value="secs"]')
 
 
 class CountdownTimer {
-    constructor(targetDate) {
+    constructor({targetDate,selector}) {
         this.targetDate = targetDate
+        this.value = selector
     }
 
     start() {
         const startTime = new Date()
 
         setInterval(() => {
-            const currentTime = new Date()
+            const currentTime = Date.now()
             const timeToFinish = this.targetDate - currentTime
             const { days, hours, mins, secs } = this.getTimeToTargetDate(timeToFinish)
             // updateCountdownTimer({days,hours,mins,secs})
