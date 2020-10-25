@@ -20,7 +20,7 @@ class CountdownTimer {
             // updateCountdownTimer({days,hours,mins,secs})
             // console.log('start',startTime)
             console.log('current :', currentTime)
-            console.log('end :',timeToFinish) 
+            console.log('finish :',timeToFinish) 
             console.log(`${days}:${hours}:${mins}:${secs}`)
         }, 1000)
     }
