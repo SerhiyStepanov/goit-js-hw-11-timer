@@ -5,26 +5,31 @@ const spanElSecs = document.querySelector('.value[data-value="secs"]')
 
 
 class CountdownTimer {
-    constructor(targetDate) {
-    this.targetDate = targetDate
+    constructor(targetDate,selector) {
+        this.targetDate = targetDate
+        this.selector = selector
     }
+
     start() {
-        const startTime = Date.now()
+        const startTime = new Date()
 
         setInterval(() => {
             const currentTime = new Date()
-            const timeToEnd = this.targetDate - currentTime
-            const { days, hours, mins, secs } = this.getTimeToTargetDate(timeToEnd)
+            const timeToFinish = this.targetDate - currentTime
+            const { days, hours, mins, secs } = this.getTimeToTargetDate(timeToFinish)
             // updateCountdownTimer({days,hours,mins,secs})
-            console.log('currentTime', currentTime)
-            console.log('targetDate', this.targetDate)
-            console.log(`${days}:${hours};${mins}:${secs}`)
+            // console.log('start',startTime)
+            console.log('current :', currentTime)
+            console.log('end :',timeToFinish) 
+            console.log(`${days}:${hours}:${mins}:${secs}`)
         }, 1000)
     }
 
+
     pad(value) {
     return String(value).padStart(2,'0')
-}
+    }
+    
 
     getTimeToTargetDate(time) {
         const days = this.pad(Math.floor(time / (1000 * 60 * 60 * 24)));
@@ -40,9 +45,9 @@ const countdownTimer = new CountdownTimer({
   selector: '#timer-1',
     targetDate: new Date('Okt 26, 2021'),
 });
-console.log(countdownTimer)
  
-// countdownTimer.start()
+countdownTimer.start()
+
 
 function updateCountdownTimer(time) {
     spanElDays.textContent = `${days}`
