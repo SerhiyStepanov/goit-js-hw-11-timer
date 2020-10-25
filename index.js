@@ -5,9 +5,8 @@ const spanElSecs = document.querySelector('.value[data-value="secs"]')
 
 
 class CountdownTimer {
-    constructor(targetDate,selector) {
+    constructor(targetDate) {
         this.targetDate = targetDate
-        this.selector = selector
     }
 
     start() {
@@ -43,11 +42,11 @@ class CountdownTimer {
 
 const countdownTimer = new CountdownTimer({
   selector: '#timer-1',
-    targetDate: new Date('Okt 26, 2021'),
+    targetDate: new Date('Oct 26, 2021'),
 });
  
 countdownTimer.start()
-
+console.log(countdownTimer.targetDate)
 
 function updateCountdownTimer(time) {
     spanElDays.textContent = `${days}`
