@@ -11,20 +11,27 @@ class CountdownTimer {
         this.updateFace = updateFace;
     }
 
-    start() {
-        const startTime = new Date()
-
-        setInterval(() => {
+    updateCount() {
             const currentTime = Date.now()
             const timeToFinish = this.targetDate - currentTime
             const time = this.getTimeToTargetDate(timeToFinish)
-            // updateCountdownTimer({days,hours,mins,secs})
+            
             this.updateFace(time)
+        }
+
+    start() {
+        const startTime = new Date()
+        this.updateCount()
+
+        setInterval(() => {
+            this.updateCount()
+        
             console.log(' CurrentTime :', currentTime)
             console.log(' TargetDate :',this.targetDate.getTime()) 
-            console.log(' TimeToFinish',timeToFinish)
+            console.log(' TimeToFinish', timeToFinish)
         }, 1000)
     }
+
 
 
     pad(value) {
