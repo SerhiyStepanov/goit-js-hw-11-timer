@@ -5,9 +5,10 @@ const spanElSecs = document.querySelector('.value[data-value="secs"]')
 
 
 class CountdownTimer {
-    constructor({targetDate,selector}) {
-        this.targetDate = targetDate
-        this.value = selector
+    constructor({targetDate,selector,updateFace}) {
+        this.targetDate = targetDate;
+        this.value = selector;
+        this.updateFace = updateFace;
     }
 
     start() {
@@ -18,6 +19,7 @@ class CountdownTimer {
             const timeToFinish = this.targetDate - currentTime
             const { days, hours, mins, secs } = this.getTimeToTargetDate(timeToFinish)
             // updateCountdownTimer({days,hours,mins,secs})
+            // this.updateFace()
             console.log('current :', currentTime)
             console.log('finish :',timeToFinish) 
             console.log(`${days}:${hours}:${mins}:${secs}`)
@@ -36,13 +38,15 @@ class CountdownTimer {
         const mins = this.pad(Math.floor((time % (1000 * 60 * 60)) / (1000 * 60)));
         const secs = this.pad(Math.floor((time % (1000 * 60)) / 1000));
         return {days,hours,mins,secs}
- }
+    }
+    
 }
 
 
 const countdownTimer = new CountdownTimer({
-  selector: '#timer-1',
+    selector: '#timer-1',
     targetDate: new Date('Oct 26, 2020'),
+    updateFace : updateCountdownTimer,
 });
  
 countdownTimer.start()
