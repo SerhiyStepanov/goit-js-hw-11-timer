@@ -60,7 +60,11 @@ countdownTimer.start()
 
 function updateCountdownTimer({days,hours,mins,secs}) {
     spanElDays.textContent = `${days}`
+    spanElDays.style.fontSize = "30px"
     spanElHours.textContent = `${hours}`
+    spanElHours.style.fontSize = "30px"
     spanElMins.textContent = `${mins}`
+    spanElMins.style.fontSize = "30px"
     spanElSecs.textContent = `${secs}`
+    spanElSecs.style.fontSize = "30px"
 }
