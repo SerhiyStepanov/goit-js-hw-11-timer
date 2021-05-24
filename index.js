@@ -1,3 +1,4 @@
+const ulList = document.querySelector("#timer-1");
 const spanElDays = document.querySelector('.value[data-value="days"]');
 const spanElHours = document.querySelector('.value[data-value="hours"]');
 const spanElMins = document.querySelector('.value[data-value="mins"]');
@@ -24,10 +25,9 @@ class CountdownTimer {
 
     setInterval(() => {
       this.updateCount();
-
-      console.log(" CurrentTime :", currentTime);
-      console.log(" TargetDate :", this.targetDate.getTime());
-      console.log(" TimeToFinish", timeToFinish);
+      // console.log(" CurrentTime :", currentTime);
+      // console.log(" TargetDate :", this.targetDate.getTime());
+      // console.log(" TimeToFinish", timeToFinish);
     }, 1000);
   }
 
@@ -55,19 +55,34 @@ const countdownTimer = new CountdownTimer({
 countdownTimer.start();
 
 function updateCountdownTimer({ days, hours, mins, secs }) {
+  ulList.style.display = "flex";
+  ulList.style.justifyContent = "center";
+
   spanElDays.textContent = `${days}`;
   spanElDays.style.fontSize = "30px";
-  spanElDays.style.color = "red";
+  spanElDays.style.color = "tomato";
+  spanElDays.style.marginBottom = "10px";
+  spanElDays.style.display = "inline-flex";
+  spanElDays.style.padding = "6px 12px";
 
   spanElHours.textContent = `${hours}`;
   spanElHours.style.fontSize = "30px";
-  spanElHours.style.color = "red";
+  spanElHours.style.color = "tomato";
+  spanElHours.style.marginBottom = "10px";
+  spanElHours.style.display = "inline-flex";
+  spanElHours.style.padding = "6px 12px";
 
   spanElMins.textContent = `${mins}`;
   spanElMins.style.fontSize = "30px";
-  spanElMins.style.color = "red";
+  spanElMins.style.color = "tomato";
+  spanElMins.style.marginBottom = "10px";
+  spanElMins.style.display = "inline-flex";
+  spanElMins.style.padding = "6px 12px";
 
   spanElSecs.textContent = `${secs}`;
   spanElSecs.style.fontSize = "30px";
-  spanElSecs.style.color = "red";
+  spanElSecs.style.color = "tomato";
+  spanElSecs.style.marginBottom = "10px";
+  spanElSecs.style.display = "inline-flex";
+  spanElSecs.style.padding = "6px 12px";
 }
